@@ -11,7 +11,7 @@
 int main()
 {
   char const SrvAddress[] = "127.0.0.1";
-  std::uint16_t const SrvPort = 5555;
+  std::uint16_t const SrvPort = 80;
   int const SrvThreadCount = 4;
   try
   {
@@ -20,7 +20,7 @@ int main()
       auto *OutBuf = evhttp_request_get_output_buffer(req);
       if (!OutBuf)
         return;
-      evbuffer_add_printf(OutBuf, "<html><body><center><h1>Hello Wotld!</h1></center></body></html>");
+      evbuffer_add_printf(OutBuf, "<html><body><center><h1>Hello World!</h1></center></body></html>");
       evhttp_send_reply(req, HTTP_OK, "", OutBuf);
     };
     std::exception_ptr InitExcept;

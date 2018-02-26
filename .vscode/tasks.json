@@ -1,0 +1,29 @@
+{   "version":"2.0.0",
+    "tasks":[
+    {"label":"sample1",
+    "type":"shell",
+    "command":"g++ sample1/main.cpp -std=c++11 -levent -o main1",
+    "group":{
+        "kind": "build",
+        "isDefault": true
+    }
+},
+   
+    {   "label":"sample2",
+        "type":"shell",
+        "command":"g++ sample2/main.cpp -std=c++11 -levent -lpthread -o main2",
+        "group":{
+            "kind": "build",
+            "isDefault": true
+        }
+    },
+    {   "label":"sample3",
+        "type":"shell",
+        "command":"g++ sample3/main.cpp -std=c++11 -levent -lpthread -o main3",
+        "group":{
+            "kind": "build",
+            "isDefault": true
+        }
+    }    
+    ]
+}
