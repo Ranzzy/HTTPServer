@@ -5,23 +5,45 @@
 **Ход работы:**
 
 Для первого примера (папка sample1) создать файлы:
+
 a)    tasks.json – конфигурация для компиляции первого примера
 
 Пример задачи компиляции:
 
-![task1](/task1.xcf)
-<i>{
-            "label": "sample1",<br>
-"type": "shell",<br>
-            "command": "g++<br>
-             sample1/main.cpp -std=c++11 -levent<br>
-             -o sample1.exe",<br>
-            "group": {<br>
-                "kind": "build",<br>
-                "isDefault": true<br>
-            }<br>
-}</i><p>
+    {
+            "label": "sample1",
+            "type": "shell",
+            "command": "g++
+             sample1/main.cpp -std=c++11 -levent
+             -o sample1.exe",
+            "group": {<
+                "kind": "build",
+                "isDefault": true
+            }
+    }
+
 b)    launch.json – конфигурация для запуска веб-приложения
 
-Компилировать и запустить веб-приложение, проверить работоспособность.
-Дополнить конфигурацию vscodeдля работы со вторым примером (папка sample2) и третьим (папка sample3)
+    {
+            "name": "Запуск sample1",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main1",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable   pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+Для задач sample2 и sample3 прописаны аналогичные конфигурации в файлах tasks.json и launch.json.
+
+**Вывод:** в данных кодах для компиляции были допущены ошибки, которые были исправлены. Для каждой задачи были прописаны инструкции сборки и запуска.
